@@ -9,24 +9,14 @@ import storage from 'redux-persist/lib/storage';
 const persistConfig = {
     key: 'root', 
 	  storage,
+    whitelist: ['auth', 'books'], 
 }
-
-
-// const store = configureStore({
-//   reducer: {
-//     books: booksReducer,
-//     cart: cartReducer,
-//     auth: authReducer,
-//   },
-// });
 
 const rootReducer = combineReducers({
   books: booksReducer,
   cart: cartReducer,
   auth: authReducer,
 });
-
-
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 

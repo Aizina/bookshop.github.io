@@ -15,9 +15,7 @@ export default function Login() {
   const [password, setPassword] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
-    if(!isLoggedIn) {
-      e.preventDefault();
-    }
+    e.preventDefault();
     dispatch(login({ email, password }));
   };
 
@@ -67,7 +65,7 @@ export default function Login() {
           {isLoggedIn  ? (
             <Link href="/user">
               <button
-                type="submit"
+                type="button"
                 className="w-full bg-[#9E98DC] uppercase text-white py-3 mt-5"
               >
                 Go to User Page
