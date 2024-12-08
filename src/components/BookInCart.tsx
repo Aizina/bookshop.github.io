@@ -6,14 +6,15 @@ const BookInCart: React.FC<BookInCartProps> = ({ cover, author, title, averageRa
     
     const createRatingStars = (averageRating: number) => {
         const rating = averageRating ? Math.round(averageRating) : Math.floor(Math.random() * 5) + 1;
-        return <Image src={`/stars/stars${rating}.png`} alt={`Rating: ${rating} stars`} width={20} height={20}/>;
+        return <Image src={`/stars/stars${rating}.png`} alt={`Rating: ${rating} stars`} width={50} height={30}/>;
     };
 
     return (
         <div className="flex max-w-md gap-3 overflow-hidden min-h-full align-middle justify-center">
 
             <div className="w-1/2 flex align-middle">
-                <Image src={cover} alt={`${title} cover`} width={40} height={40} />
+                <Image src={cover} alt={`${title} cover`} layout="responsive"  
+                width={20} height={20} objectFit="cover" objectPosition="center" />
             </div>
         
             <div className="flex flex-col justify-around align-middle w-1/2">

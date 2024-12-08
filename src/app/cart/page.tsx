@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { RootState, AppDispatch } from '@/store/index';
 import { useDispatch, useSelector } from "react-redux";
 import {removeFromCart, updateCart} from '@/store/cartSlice';
-
+import Head from "next/head";
 
 export default function CartPage() {
 
@@ -30,10 +30,16 @@ const { cartItems } = useSelector((state: RootState) => state.cart);
     return cartItems.reduce(
       (total, item) => total + item.amount * (item.cartAmount || 1),
       0
-    );
+    ).toFixed(2);
   };
 
   return (
+    <>
+    <Head>
+      <title>Cart Page</title>
+      <meta name="description" content="Cart Page" />
+      <meta name="author" content="Aizat A" />
+    </Head>
     <div className="p-16 m-auto">
       <table className="text-left w-full border-spacing-12">
         <thead>
@@ -79,6 +85,7 @@ const { cartItems } = useSelector((state: RootState) => state.cart);
       <p className="text-[#1C2A39] font-bold text-2xl p-4 py-10">TOTAL PRICE: ${calculateTotalPrice()}</p>
       <button className="text-[#4C3DB2] font-bold uppercase border-solid border-[1px] border-[#4C3DB2] px-4 py-2 m-auto w-64">CHECKOUT</button>
     </div>
+  </>
 
   );
 }

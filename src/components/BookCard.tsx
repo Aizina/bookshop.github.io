@@ -30,7 +30,7 @@ const BookCard: React.FC<BookCardProps> = (props) => {
 
     const createRatingStars = (averageRating: number) => {
         const rating = averageRating ? Math.round(averageRating) : Math.floor(Math.random() * 5) + 1;
-        return <Image src={`/stars/stars${rating}.png`} alt={`Rating: ${rating} stars`} width={10} height={10}/>;
+        return <Image src={`/stars/stars${rating}.png`} alt={`Rating: ${rating} stars`} width={50} height={20}/>;
     };
   
       return (

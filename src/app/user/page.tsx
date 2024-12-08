@@ -2,6 +2,13 @@
 import Image from "next/image";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store";
+import { Montserrat } from 'next/font/google';
+
+const font = Montserrat({
+  weight: ["400"],
+  subsets: ["latin", "cyrillic"],
+})
+
 
 export default function UserPage() {
 
@@ -12,7 +19,7 @@ export default function UserPage() {
   }
 
     return (
-      <div className="min-h-screen flex flex-col items-center gap-4 md:flex-row md:justify-around mt-6 p-3">
+      <div className={`${font.className} min-h-screen flex flex-col items-center gap-4 md:flex-row md:justify-around mt-6 p-3`}>
       <div className="w-1/2" >
           <h1 className="text-lg md:text-2xl font-bold uppercase">Profile</h1>
         <div className="flex flex-col items-center md:flex-row md:justify-around">
