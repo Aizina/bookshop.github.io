@@ -1,12 +1,11 @@
-// pages/index.tsx
 "use client"
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchBooks, setCategory, loadMoreBooks } from '@/store/bookSlice';
 import { RootState, AppDispatch } from '@/store/index';
 import BookList from '@/components/BookList';
-//import Categories from '@/components/Categories';
-//import Carousel from '@/components/Carousel';
+import Categories from '@/components/Categories';
+import Carousel from '@/components/Carousel';
 
 export default function Home() {
   const dispatch: AppDispatch = useDispatch();
@@ -29,10 +28,10 @@ export default function Home() {
   return (
     <div className="py-9 flex flex-row justify-center">
       <main className="flex flex-col gap-16 w-full max-w-7xl">
-        {/* <Carousel /> */}
+        <Carousel />
 
         <div className="grid grid-cols-[0.2fr_0.8fr] md:grid-cols-[0.3fr_0.7fr]"> 
-        {/* <Categories currentCategory={currentCategory} setCurrentCategory={handleCategoryChange} /> */}
+        <Categories currentCategory={currentCategory} setCurrentCategory={handleCategoryChange} />
 
           <div className="flex flex-col gap-9 align-center justify-center">
           {loading && 

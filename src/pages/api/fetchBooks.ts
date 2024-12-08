@@ -14,7 +14,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_BOOKS_API_KEY;
   const apiUrl = process.env.NEXT_PUBLIC_GOOGLE_BOOKS_API_URL;
 
-
   const gbooksReqParams = new URLSearchParams({
     q: `subject:${subject}` as string,
     key: apiKey as string,

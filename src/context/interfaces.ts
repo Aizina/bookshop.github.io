@@ -71,4 +71,26 @@ export type CartContextType = {
     loading: boolean;
   }
   
- 
+  export interface ValidationResult {
+    error: boolean;
+    errorType: string | null;
+    message: string | null;
+  }
+
+  export interface AuthState {
+    email: string | null;
+    token: string | null;
+    error: string | null;
+    errorType: string | null;
+    isLoggedIn: boolean;
+    loading: boolean;
+  }
+
+export interface LoginError {
+  message: string;
+  errorType?: string;
+}
+
+export interface CartState {
+  cartItems: BookCardProps[];
+}
